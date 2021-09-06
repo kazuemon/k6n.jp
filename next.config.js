@@ -26,7 +26,10 @@ const redirects = async () => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  redirects
+  redirects,
+  images: {
+    domains: ['raw.githubusercontent.com']
+  }
 }
 
 module.exports = nextConfig;

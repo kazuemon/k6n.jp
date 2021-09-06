@@ -1,4 +1,6 @@
-import '../styles/globals.css'
+import 'the-new-css-reset/css/reset.css';
+import '../styles/main.scss';
+
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
