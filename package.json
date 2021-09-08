@@ -6,13 +6,19 @@
     "dev": "run-p dev:*",
     "dev:next": "next dev",
     "dev:path": "pathpida --watch",
-    "dev:style": "tsm \"styles/**/*.module.scss\" --watch",
+    "dev:style": "tsm 'styles/**/*.module.scss' --watch",
     "build": "run-s build:path build:style build:next",
-    "build:style": "tsm \"styles/**/*.module.scss\"",
+    "build:style": "tsm 'styles/**/*.module.scss'",
     "build:path": "pathpida",
     "build:next": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "run-s lint:style lint:next",
+    "lint:next": "next lint",
+    "lint:style": "stylelint --fix styles/**/*.{css,scss}",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "lint:next"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -26,7 +32,14 @@
     "@types/react": "17.0.20",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "pathpida": "^0.17.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recess-order": "^2.5.0",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.20.1",
     "typed-scss-modules": "^4.1.1",
     "typescript": "4.4.2",
     "yarn-run-all": "^3.1.1"

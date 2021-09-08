@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/test.module.scss';
+import styles2 from '../styles/hoge.module.scss';
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,9 @@ const Home: NextPage = () => {
         <span className={styles.bigTitle}>big</span>
         <span className={styles.boldTitle}>bold</span>
         red
+      </p>
+      <p className={styles2.thumbsUp}>
+        Yay!!!
       </p>
       <div style={{height: 30 + 'px'}}></div>
       <a href="https://github.com/kazuemon">
