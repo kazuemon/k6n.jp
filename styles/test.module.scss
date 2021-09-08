@@ -1,0 +1,13 @@
+.title {
+  color: red;
+}
+
+.boldTitle {
+  @extend .title;
+  font-weight: bold;
+}
+
+.bigTitle {
+  color: green;
+  font-size: 2em;
+}

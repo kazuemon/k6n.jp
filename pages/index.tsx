@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from '../styles/test.module.scss';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,11 @@ const Home: NextPage = () => {
       <p>
         公開しましたら Twitter <Link href="/tw">@kazuemon_0602</Link> でお知らせいたします。<br />
         I&apos;ll let you know via Twitter <Link href="/tw">@kazuemon_0602</Link> when this site goes live.<br />
+      </p>
+      <p className={styles.title}>
+        <span className={styles.bigTitle}>big</span>
+        <span className={styles.boldTitle}>bold</span>
+        red
       </p>
       <div style={{height: 30 + 'px'}}></div>
       <a href="https://github.com/kazuemon">

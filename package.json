@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:path": "pathpida --watch",
+    "dev:style": "tsm \"styles/**/*.module.scss\" --watch",
+    "build": "run-s build:path build:style build:next",
+    "build:style": "tsm \"styles/**/*.module.scss\"",
+    "build:path": "pathpida",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -20,6 +26,9 @@
     "@types/react": "17.0.20",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "typescript": "4.4.2"
+    "pathpida": "^0.17.0",
+    "typed-scss-modules": "^4.1.1",
+    "typescript": "4.4.2",
+    "yarn-run-all": "^3.1.1"
   }
 }
